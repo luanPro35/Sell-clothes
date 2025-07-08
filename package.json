@@ -1,0 +1,27 @@
+{
+  "name": "website-selling-clothes",
+  "version": "1.0.0",
+  "description": "Dự án website bán quần áo sử dụng HTML/CSS/JavaScript cho phần Frontend và Spring Boot cho phần Backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanPro35/Sell-clothes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luanPro35/Sell-clothes/issues"
+  },
+  "homepage": "https://github.com/luanPro35/Sell-clothes#readme",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.7",
+    "gsap": "^3.13.0",
+    "jquery": "^3.7.1",
+    "swiper": "^11.2.10"
+  }
+}
