@@ -10,10 +10,10 @@ body {
 }
 
 body {
-    background-color: black;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 /* Ẩn thanh cuộn cho tất cả các trình duyệt */
@@ -33,6 +33,21 @@ body::-webkit-scrollbar {
 }
 
 
+/* Thêm vào cuối file nav.css */
+
+/* Sửa lại hiệu ứng fade cho slideshow */
+.slideshow-slide {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-slide.active {
+    opacity: 1;
+}
+
+/* Đảm bảo navbar luôn trong suốt khi ở đầu trang */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -44,14 +59,49 @@ body::-webkit-scrollbar {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: transparent;
+    background-color: transparent !important;
+    /* Ghi đè Bootstrap */
     transition: background-color 0.3s ease;
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    /* Ghi đè Bootstrap */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Đảm bảo container không ảnh hưởng đến header */
+header {
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Sửa lại hiệu ứng fade */
+@keyframes fade {
+    from {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Đảm bảo slideshow container chiếm toàn màn hình */
+.slideshow-container {
+    width: 100vw;
+    max-width: 100%;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .menu {
@@ -79,19 +129,36 @@ body::-webkit-scrollbar {
     margin-right: 40px;
 }
 
-.logo {
+.icon-nav a,
+.icon-nav a:hover,
+.icon-nav a:active,
+.icon-nav a:focus,
+.icon-nav a:visited {
+    text-decoration: none !important;
+    color: white !important;
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+
+
+.logo,
+.logo a,
+.logo a:hover,
+.logo a:active,
+.logo a:focus,
+.logo a:visited {
     font-size: 40px;
     color: #ffffff;
     font-weight: bolder;
     letter-spacing: 2px;
     margin-left: 10px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
-}
-
-.logo:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    transform: scale(1.02);
+    text-decoration: none !important;
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
 }
 
 .logo-text_one {
@@ -111,13 +178,54 @@ body::-webkit-scrollbar {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: white;
+    -webkit-tap-highlight-color: transparent !important;
+    /* Loại bỏ hiệu ứng highlight khi chạm trên thiết bị di động */
+    outline: none !important;
+    /* Loại bỏ outline khi focus */
+    background-color: transparent !important;
+}
+
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    background-color: transparent !important;
+    color: white;
+}
+
+.menu a,
+.menu a:hover,
+.menu a:active,
+.menu a:focus,
+.menu a:visited {
+    position: relative;
+    text-decoration: none !important;
+    color: white !important;
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
 }
 
 /* Đảm bảo nội dung không bị che bởi thanh điều hướng */
 header {
     margin-top: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+    background-color: transparent !important;
 }
 
 /* Slideshow styles */
@@ -155,53 +263,123 @@ header {
 
 .header-content {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 200;
     width: 80%;
-    text-align: center;
     color: white;
 }
 
+.text-header {
+    text-align: left;
+    max-width: 600px;
+}
+
 .text-header h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    width: 55%;
-    text-align: start;
+    text-align: left;
 }
 
 .text-header p {
-    font-size: 24px;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     line-height: 1.6;
-    font-family: Montserrat, sans-serif;
-    width: 55%;
-    text-align: start;
-
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
 }
 
 .text-header button {
     background: white;
-    color: blac;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    /* Loại bỏ hiệu ứng highlight khi chạm trên thiết bị di động */
+    outline: none;
+    /* Loại bỏ outline khi focus */
+    cursor: pointer;
+}
+
+button:active,
+button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.container-main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container-main-content {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.section-one {
+    margin-top: -50px;
+    margin-left: -35px;
+}
+
+.section-one-title,
+.section-two-title {
+    font-size: 3rem;
+    color: #333;
+    text-align: start;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    width: 54rem;
+    margin-right: 40px;
+}
+
+.section-one-content,
+.section-two-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+
+.section-one-content p,
+.section-two-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+}
+
+.section-one-content button,
+.section-two-content button {
+    background-color: white;
+    color: black;
     padding: 12px 30px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
     width: auto;
     display: inline-block;
-    margin-right: 50px;
-    text-align: start;
-    text-decoration: none;
-    margin-left: -1000px;
-}
-
-.text-header button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    text-align: center;
+    margin-left: auto;
 }
 
 /* Fading animation */
@@ -212,6 +390,32 @@ header {
 
     to {
         opacity: 1
+    }
+}
+
+/* Hiệu ứng scroll animation */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -259,4 +463,101 @@ header {
     .icon-nav {
         gap: 15px;
     }
+}
+
+/* Styling cho product cards */
+.product-card {
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 5px;
+    transform: scale(1.02);
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.product-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff5252;
+}
+
+.product-card .btn {
+    background: linear-gradient(45deg, #ff6b6b, #ffb347);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.product-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-sale {
+    background-color: #ff5252;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-sale:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 82, 82, 0.4);
+}
+
+.price-sale {
+    text-decoration: line-through;
+}
+
+.section-one-image,
+.section-two-image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Đảm bảo không có thanh cuộn ngang do phần tử full-width */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.mt-custom {
+    margin-top: 0rem !important;
+}
+
+.bg-light-gray {
+    background-color: #f8f9fa !important;
+    padding: 2rem;
 }
