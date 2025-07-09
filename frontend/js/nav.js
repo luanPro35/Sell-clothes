@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Xử lý hiệu ứng scroll animation với Intersection Observer
+  // Xử lý hiệu ứng scroll animation với Intersection Observer cho các phần tử thông thường
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       // Nếu phần tử đang được nhìn thấy
@@ -58,9 +58,35 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: "0px 0px -50px 0px" // Điều chỉnh khi hiệu ứng kích hoạt
   });
   
-  // Lấy tất cả các phần tử có class 'hidden'
-  const hiddenElements = document.querySelectorAll('.hidden');
+  // Xử lý hiệu ứng scroll animation cho các sản phẩm với hiệu ứng tuần tự
+  const productObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Lấy tất cả các cột sản phẩm trong container
+        const productColumns = entry.target.querySelectorAll('.product-column');
+        
+        // Thêm class show với độ trễ tăng dần
+        productColumns.forEach((column, index) => {
+          setTimeout(() => {
+            column.classList.add('show');
+          }, 150 * index); // Mỗi sản phẩm hiện sau 150ms
+        });
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px"
+  });
   
-  // Áp dụng observer cho mỗi phần tử
+  // Lấy tất cả các phần tử có class 'hidden' (trừ product-showcase)
+  const hiddenElements = document.querySelectorAll('.hidden:not(.product-showcase)');
+  
+  // Lấy các phần tử product-showcase
+  const productShowcases = document.querySelectorAll('.product-showcase');
+  
+  // Áp dụng observer cho các phần tử thông thường
   hiddenElements.forEach((el) => observer.observe(el));
+  
+  // Áp dụng productObserver cho các phần tử product-showcase
+  productShowcases.forEach((el) => productObserver.observe(el));
 });
