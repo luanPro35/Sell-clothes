@@ -95,7 +95,7 @@ a {
 
 /* Đảm bảo slideshow container chiếm toàn màn hình */
 .slideshow-container {
-    width: 100vw;
+    width: 100%;
     max-width: 100%;
     position: relative;
     margin: 0;

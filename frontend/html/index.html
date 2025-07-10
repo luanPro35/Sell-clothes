@@ -9,6 +9,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -102,7 +103,7 @@
             <div class="section-one-image mt-4 hidden">
               <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                  <div
+                  <article
                     class="card product-card hidden"
                     style="transition-delay: 200ms"
                   >
@@ -120,10 +121,10 @@
                         <button class="btn btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                  <div
+                  <article
                     class="card product-card hidden"
                     style="transition-delay: 400ms"
                   >
@@ -141,10 +142,10 @@
                         <button class="btn btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                  <div
+                  <article
                     class="card product-card hidden"
                     style="transition-delay: 600ms"
                   >
@@ -165,10 +166,10 @@
                         <button class="btn btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                  <div
+                  <article
                     class="card product-card hidden"
                     style="transition-delay: 800ms"
                   >
@@ -189,7 +190,7 @@
                         <button class="btn btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
               </div>
             </div>
@@ -216,7 +217,7 @@
             <div class="carousel-container">
               <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
-                  <div class="product-card">
+                  <article class="product-card">
                     <img
                       src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
                       alt="Áo thun nam cổ tròn"
@@ -228,9 +229,8 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="product-card">
+                  </article>
+                  <article class="product-card">
                     <img
                       src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=400&fit=crop"
                       alt="Áo thun nam họa tiết"
@@ -242,9 +242,8 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="product-card">
+                  </article>
+                  <article class="product-card">
                     <button class="btn-sale">Sale</button>
                     <img
                       src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=400&fit=crop"
@@ -259,9 +258,8 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="product-card">
+                  </article>
+                  <article class="product-card">
                     <button class="btn-sale">Sale</button>
                     <img
                       src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=400&fit=crop"
@@ -276,9 +274,8 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="product-card">
+                  </article>
+                  <article class="product-card">
                     <img
                       src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop"
                       alt="Áo khoác nam"
@@ -290,9 +287,8 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="product-card">
+                  </article>
+                  <article class="product-card">
                     <button class="btn-sale">Sale</button>
                     <img
                       src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop"
@@ -307,7 +303,7 @@
                         <button class="btn-primary">Add to cart</button>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
               </div>
 
@@ -369,7 +365,18 @@
         </section>
       </div>
     </main>
+    <div id="footer-placeholder"></div>
     <!-- JavaScript -->
+    <!-- jQuery is required for the script below to work -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        // Load the footer from footer.html and replace the placeholder
+        $("#footer-placeholder").load("footer.html #footer", function () {
+          $(this).replaceWith($(this).children());
+        });
+      });
+    </script>
     <script src="../js/nav.js"></script>
   </body>
 </html>
