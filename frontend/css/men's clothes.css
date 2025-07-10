@@ -1,0 +1,422 @@
+/* General body styling to ensure consistency */
+body {
+    background-color: #f8f9fa;
+    /* A light grey background */
+    font-family: "Poppins", sans-serif;
+    /* Consistent font with the homepage */
+}
+
+.slideshow-container .slideshow-slide img {
+    height: 100%;
+    /* Bạn có thể điều chỉnh chiều cao này */
+    width: 100%;
+    object-fit: cover;
+    /* Đảm bảo ảnh che phủ toàn bộ khung mà không bị méo */
+    object-position: center;
+    /* Căn giữa ảnh */
+}
+
+/* General styles for the section */
+.section-men-1 {
+    padding: 60px 15px;
+    background-color: #f9f9f9;
+}
+
+.section-men-1 .content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-men-1 h1 {
+    display: inline-block;
+    /* Thay đổi từ flex để vùng hover chỉ bao quanh chữ */
+    text-align: start;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    transition: color 0.3s ease;
+    /* Thêm hiệu ứng chuyển màu mượt mà */
+    cursor: pointer;
+    /* Thêm con trỏ để cho biết có thể tương tác */
+}
+
+.section-men-1 h1:hover {
+    color: rgb(232, 103, 103);
+}
+
+/* Container for the cards using CSS Grid */
+.list-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    /* Cần thiết để định vị cho tiêu đề h3 */
+}
+
+.category-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    /* Đảm bảo ảnh che phủ toàn bộ thẻ */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.category-card h3 {
+    position: absolute;
+    /* Đặt h3 nằm trên ảnh */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #222;
+    /* Đổi chữ thành màu tối để dễ đọc trên nền trắng */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Nền trắng mờ */
+    -webkit-backdrop-filter: blur(4px);
+    /* Hiệu ứng kính mờ cho Safari */
+    backdrop-filter: blur(4px);
+    /* Hiệu ứng kính mờ */
+    text-align: center;
+    padding: 20px 15px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+/* --- Section Men 2: Promotion Products --- */
+.section-men-2 {
+    padding: 60px 15px;
+    background-color: #f0e9e9;
+    /* White background to stand out */
+}
+
+.section-men-2 .content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-men-2 h1 {
+    display: inline-block;
+    text-align: start;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.section-men-2 h1:hover {
+    color: rgb(232, 103, 103);
+}
+
+/* Override list-card for the promotion section to display 6 items */
+.section-men-2 .list-card {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    /* Adjust gap for a 6-column layout */
+}
+
+/* Styling for individual product items */
+.product-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    /* Ensures the zoomed image doesn't spill out */
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25;
+    /* Add line-height for consistent spacing */
+    margin-bottom: 10px;
+    height: 2.5em;
+    /* Set height for 2 lines (2 * 1.25em) */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.original-price {
+    font-size: 0.9rem;
+    color: #888;
+    text-decoration: line-through;
+}
+
+.sale-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e53935;
+}
+
+/* Adjust text sizes for smaller product cards in the promotion section */
+.section-men-2 .product-name {
+    font-size: .9rem;
+    height: 2.5em;
+    /* Keep height for 2 lines */
+}
+
+.section-men-2 .sale-price {
+    font-size: 1rem;
+}
+
+.section-men-2 .original-price {
+    font-size: .85rem;
+}
+
+/* --- Button "Xem tất cả" --- */
+.btn-more {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin: 50px auto 0;
+    padding: 15px 35px;
+    border: 2px solid #e67e22;
+    /* Màu cam */
+    background-color: transparent;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    /* Đảm bảo nội dung nút nằm trên lớp ::before */
+}
+
+/* The sliding background element */
+.btn-more::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e67e22;
+    /* Nền màu cam */
+    /* Bắt đầu là một hình tròn nhỏ ở góc dưới bên trái */
+    clip-path: circle(0% at 0% 100%);
+    transition: clip-path 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+    z-index: -1;
+}
+
+/* Khi di chuột vào, bung nền ra và đổi màu chữ */
+.btn-more:hover {
+    color: #fff;
+    /* Đổi màu chữ thành trắng */
+}
+
+.btn-more:hover::before {
+    clip-path: circle(150% at 0% 100%);
+    /* Bung rộng ra để che hết nút */
+}
+
+/* Style for the inner span "SẢN PHẨM KHUYẾN MÃI" */
+.btn-more span span {
+    font-weight: 700;
+    color: #e67e22;
+    /* Màu cam cho chữ được nhấn mạnh */
+    transition: color 0.4s ease-in-out;
+}
+
+/* Khi di chuột vào, chữ được nhấn mạnh cũng đổi màu */
+.btn-more:hover span span {
+    color: #fff;
+}
+
+/* --- Section Men 3: New Products --- */
+.section-men-3 {
+    padding: 60px 15px;
+    background-color: #ffffff;
+    /* White background to stand out */
+}
+
+.section-men-3 .content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-men-3 h1 {
+    display: inline-block;
+    text-align: start;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.section-men-3 h1:hover {
+    color: rgb(232, 103, 103);
+}
+
+/* Override list-card for the new products section to display 5 items per row */
+.section-men-3 .list-card {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    /* Adjust gap for a 5-column layout */
+}
+
+/* Adjust text sizes for smaller product cards in the new products section */
+.section-men-3 .product-name {
+    font-size: .9rem;
+    height: 2.5em;
+    /* Keep height for 2 lines */
+}
+
+.section-men-3 .sale-price {
+    font-size: 1rem;
+}
+
+/* --- Section Men 4: New Products --- */
+.section-men-4 {
+    padding: 60px 15px;
+    background-color: #f9f9f9;
+    /* Same as section 1 */
+}
+
+.section-men-4 .content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-men-4 h1 {
+    display: inline-block;
+    text-align: start;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.section-men-4 h1:hover {
+    color: rgb(232, 103, 103);
+}
+
+/* Override list-card for the new products section to display 3 items per row */
+.section-men-4 .list-card {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* Adjust gap for a 3-column layout */
+}
+
+/* Adjust text sizes for product cards in the new products section */
+.section-men-4 .product-name {
+    font-size: 1rem;
+    height: 2.5em;
+}
+
+.section-men-4 .sale-price {
+    font-size: 1.1rem;
+}
+
+.section-men-4 .product-info {
+    text-align: start;
+}
+
+.section-men-4 .product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.section-men-4 .product-info .btn-more {
+    margin: 0;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+}
+
+.section-men-4 .product-item {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.section-men-4 .product-item:hover {
+    transform: none;
+    box-shadow: none;
+}

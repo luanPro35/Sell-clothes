@@ -17,7 +17,7 @@ body {
 }
 
 .container-footer {
-    max-width: 1200px;
+    width: 82%;
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
@@ -231,4 +231,8 @@ body {
         font-size: 16px;
         /* Prevent zoom on iOS */
     }
+}
+
+.logo {
+    margin-left: -5px;
 }
