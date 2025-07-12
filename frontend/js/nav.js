@@ -29,8 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(showSlides, 5000);
   }
   
-  // Bắt đầu slideshow sau 2 giây để tránh nhấp nháy khi trang vừa tải
-  setTimeout(showSlides, 2000);
+  // Chỉ bắt đầu slideshow nếu có slide
+  if (slides.length > 0) {
+    // Bắt đầu slideshow sau 2 giây để tránh nhấp nháy khi trang vừa tải
+    setTimeout(showSlides, 2000);
+  }
   
   // Xử lý hiệu ứng navbar khi cuộn
   window.addEventListener('scroll', function() {
