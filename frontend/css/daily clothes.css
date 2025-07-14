@@ -106,7 +106,7 @@ main {
     color: #000;
 }
 
-.content-three .product-card .buy-now-btn {
+.content-three .product-card .btn-primary {
     opacity: 0;
     transition: opacity 0.3s;
     padding: 10px 20px;
@@ -119,7 +119,7 @@ main {
     margin: 0 15px 15px;
 }
 
-.content-three .product-card:hover .buy-now-btn {
+.content-three .product-card:hover .btn-primary {
     opacity: 1;
 }
 

@@ -1,0 +1,31 @@
+.logo-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.logos-track {
+    display: flex;
+    width: calc(400px * 12);
+    animation: scroll 30s linear infinite;
+}
+
+.logos-track:hover {
+    animation-play-state: paused;
+}
+
+.logos-track img {
+    width: 400px;
+    height: auto;
+    margin: 0px 60px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-450px * 6));
+    }
+}

@@ -92,4 +92,24 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Áp dụng productObserver cho các phần tử product-showcase
   productShowcases.forEach((el) => productObserver.observe(el));
+
+  const cartIcon = document.querySelector('.fa-bag-shopping');
+  const cartSidebar = document.querySelector('.cart-sidebar');
+  const closeCartBtn = document.querySelector('.close-cart-btn');
+
+  if (cartIcon && cartSidebar && closeCartBtn) {
+    cartIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log("Cart icon clicked!");
+      cartSidebar.classList.toggle('open');
+      // Re-render the cart every time it's opened
+      if (typeof renderCart === 'function') {
+        renderCart();
+      }
+    });
+
+    closeCartBtn.addEventListener('click', () => {
+      cartSidebar.classList.remove('open');
+    });
+  }
 });

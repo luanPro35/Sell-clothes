@@ -8,8 +8,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../css/nav.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="./frontend/css/nav.css" />
+    <link rel="stylesheet" href="./frontend/css/footer.css" />
+    <link rel="stylesheet" href="./frontend/css/cart.css" />
+    <link rel="stylesheet" href="./frontend/css/logo-carousel.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -37,7 +39,7 @@
     <!-- Header section - full width -->
     <header>
       <nav class="navbar">
-        <a href="../html/index.html"
+        <a href="index.html"
           ><div class="logo">
             <span>
               T-S<span class="logo-text_one">HIRT</span>S<span
@@ -48,32 +50,43 @@
           </div></a
         >
         <ul class="menu">
-          <li><a href="../html/men's clothes.html">Thời trang nam</a></li>
-          <li><a href="../html/man's clothes.html">Thời trang nữ</a></li>
-          <li><a href="../html/child's clothes.html">Thời trang trẻ em</a></li>
-          <li><a href="../html/summer clothes.html">Bộ sưu tập mùa hè</a></li>
           <li>
-            <a href="../html/daily clothes.html">Phong cách thường ngày</a>
+            <a href="./frontend/html/men's clothes.html">Thời trang nam</a>
+          </li>
+          <li>
+            <a href="./frontend/html/man's clothes.html">Thời trang nữ</a>
+          </li>
+          <li>
+            <a href="./frontend/html/child's clothes.html">Thời trang trẻ em</a>
+          </li>
+          <li>
+            <a href="./frontend/html/summer clothes.html">Bộ sưu tập mùa hè</a>
+          </li>
+          <li>
+            <a href="./frontend/html/daily clothes.html"
+              >Phong cách thường ngày</a
+            >
           </li>
         </ul>
         <ul class="icon-nav">
           <li>
             <a href=""><i class="fa-solid fa-user"></i></a>
           </li>
-          <li>
+          <li class="cart-icon">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            <span class="cart-count">0</span>
           </li>
         </ul>
       </nav>
       <div class="slideshow-container">
         <div class="slideshow-slide fade">
-          <img src="../assets/header1.jpg" alt="Header Image 1" />
+          <img src="./frontend/assets/header1.jpg" alt="Header Image 1" />
         </div>
         <div class="slideshow-slide fade">
-          <img src="../assets/header2.webp" alt="Header Image 2" />
+          <img src="./frontend/assets/header2.webp" alt="Header Image 2" />
         </div>
         <div class="slideshow-slide fade">
-          <img src="../assets/header3.jpg" alt="Header Image 3" />
+          <img src="./frontend/assets/header3.jpg" alt="Header Image 3" />
         </div>
       </div>
       <div class="header-content">
@@ -112,7 +125,7 @@
                     style="transition-delay: 200ms"
                   >
                     <img
-                      src="../assets/section1_1.webp"
+                      src="./frontend/assets/section1_1.webp"
                       class="card-img-top"
                       alt="Áo phông polo nam"
                     />
@@ -122,7 +135,15 @@
                         class="d-flex justify-content-between align-items-center mt-2"
                       >
                         <span class="price">575.000đ</span>
-                        <button class="btn btn-primary">Add to cart</button>
+                        <button
+                          class="btn btn-primary"
+                          data-id="product-1"
+                          data-name="Áo thun nam cổ tròn"
+                          data-price="575000"
+                          data-image="assets/section1_1.webp"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -133,7 +154,7 @@
                     style="transition-delay: 400ms"
                   >
                     <img
-                      src="../assets/section1_2.jpg"
+                      src="./frontend/assets/section1_2.jpg"
                       class="card-img-top"
                       alt="Áo phông polo nam"
                     />
@@ -143,7 +164,15 @@
                         class="d-flex justify-content-between align-items-center mt-2"
                       >
                         <span class="price">437.000đ</span>
-                        <button class="btn btn-primary">Add to cart</button>
+                        <button
+                          class="btn btn-primary"
+                          data-id="product-2"
+                          data-name="Áo thun nam họa tiết"
+                          data-price="437000"
+                          data-image="assets/section1_2.jpg"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -155,7 +184,7 @@
                   >
                     <button class="btn btn-sale">Sale</button>
                     <img
-                      src="../assets/section1_3.jpg"
+                      src="./frontend/assets/section1_3.jpg"
                       class="card-img-top"
                       alt="Áo phông polo nam"
                     />
@@ -168,7 +197,15 @@
                           ><span class="price-sale">499.000đ</span>
                           375.000đ</span
                         >
-                        <button class="btn btn-primary">Add to cart</button>
+                        <button
+                          class="btn btn-primary"
+                          data-id="product-3"
+                          data-name="Áo thun đẹp cao cấp"
+                          data-price="375000"
+                          data-image="assets/section1_3.jpg"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -180,7 +217,7 @@
                   >
                     <button class="btn btn-sale">Sale</button>
                     <img
-                      src="../assets/section1_4.jpg"
+                      src="./frontend/assets/section1_4.jpg"
                       class="card-img-top"
                       alt="Áo phông polo nam"
                     />
@@ -193,7 +230,15 @@
                           ><span class="price-sale">399.000đ</span>
                           299.000đ</span
                         >
-                        <button class="btn btn-primary">Add to cart</button>
+                        <button
+                          class="btn btn-primary"
+                          data-id="product-4"
+                          data-name="Áo phông polo nam"
+                          data-price="299000"
+                          data-image="assets/section1_4.jpg"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -232,7 +277,15 @@
                       <span class="card-title">Áo thun nam cổ tròn</span>
                       <div class="price-container">
                         <span class="price">575.000đ</span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-5"
+                          data-name="Áo thun nam cổ tròn"
+                          data-price="575000"
+                          data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -245,7 +298,15 @@
                       <span class="card-title">Áo thun nam họa tiết</span>
                       <div class="price-container">
                         <span class="price">437.000đ</span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-6"
+                          data-name="Áo thun nam họa tiết"
+                          data-price="437000"
+                          data-image="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -261,7 +322,15 @@
                         <span class="price"
                           ><span class="price-sale">499.000đ</span> 375.000đ
                         </span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-7"
+                          data-name="Áo thun đẹp cao cấp"
+                          data-price="375000"
+                          data-image="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -277,7 +346,15 @@
                         <span class="price"
                           ><span class="price-sale">399.000đ</span> 299.000đ
                         </span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-8"
+                          data-name="Áo phông polo nam"
+                          data-price="299000"
+                          data-image="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -290,7 +367,15 @@
                       <span class="card-title">Áo khoác nam thời trang</span>
                       <div class="price-container">
                         <span class="price">749.000đ</span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-9"
+                          data-name="Áo khoác nam thời trang"
+                          data-price="749000"
+                          data-image="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -306,7 +391,15 @@
                         <span class="price"
                           ><span class="price-sale">625.000đ</span> 499.000đ
                         </span>
-                        <button class="btn-primary">Add to cart</button>
+                        <button
+                          class="btn-primary"
+                          data-id="product-10"
+                          data-name="Áo sơ mi trắng nam"
+                          data-price="499000"
+                          data-image="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -328,31 +421,57 @@
       <div class="container-main_3">
         <section class="section-three">
           <h2>Các thương hiệu đáng tin cậy của chúng tôi</h2>
-          <div class="logos-list">
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_cIdh8OBP.svg"
-              alt=""
-            />
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_9hARhPrn.svg"
-              alt=""
-            />
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_7JgJaT3x.svg"
-              alt=""
-            />
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_sZ44U0na.svg"
-              alt=""
-            />
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_N10oKZOV.svg"
-              alt=""
-            />
-            <img
-              src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_DnDeczOW.svg"
-              alt=""
-            />
+          <div class="logo-carousel">
+            <div class="logos-track">
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_cIdh8OBP.svg"
+                alt="Logo 1"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_9hARhPrn.svg"
+                alt="Logo 2"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_7JgJaT3x.svg"
+                alt="Logo 3"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_sZ44U0na.svg"
+                alt="Logo 4"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_N10oKZOV.svg"
+                alt="Logo 5"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_DnDeczOW.svg"
+                alt="Logo 6"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_cIdh8OBP.svg"
+                alt="Logo 1"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_9hARhPrn.svg"
+                alt="Logo 2"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_7JgJaT3x.svg"
+                alt="Logo 3"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_sZ44U0na.svg"
+                alt="Logo 4"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_N10oKZOV.svg"
+                alt="Logo 5"
+              />
+              <img
+                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_DnDeczOW.svg"
+                alt="Logo 6"
+              />
+            </div>
           </div>
         </section>
       </div>
@@ -371,18 +490,42 @@
         </section>
       </div>
     </main>
+    <div id="checkout-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal-btn">&times;</span>
+        <p id="modal-message"></p>
+      </div>
+    </div>
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Giỏ hàng</h2>
+        <button class="close-cart-btn">&times;</button>
+      </div>
+      <div class="cart-body">
+        <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào đây -->
+      </div>
+      <div class="cart-footer">
+        <p>Tổng cộng: <span class="cart-total">0đ</span></p>
+        <button class="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
     <div id="footer-placeholder"></div>
     <!-- JavaScript -->
     <!-- jQuery is required for the script below to work -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(function () {
         // Load the footer from footer.html and replace the placeholder
-        $("#footer-placeholder").load("footer.html #footer", function () {
-          $(this).replaceWith($(this).children());
-        });
+        $("#footer-placeholder").load(
+          "./frontend/html/footer.html #footer",
+          function () {
+            $(this).replaceWith($(this).children());
+          }
+        );
       });
     </script>
-    <script src="../js/nav.js"></script>
+    <script src="./frontend/js/nav.js"></script>
+    <script src="./frontend/js/index.js"></script>
   </body>
 </html>

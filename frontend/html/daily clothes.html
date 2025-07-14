@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/daily clothes.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -15,7 +16,7 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="../html/index.html"
+        <a href="/index.html"
           ><div class="logo">
             <span>
               T-S<span class="logo-text_one">HIRT</span>S<span
@@ -38,8 +39,9 @@
           <li>
             <a href=""><i class="fa-solid fa-user"></i></a>
           </li>
-          <li>
+          <li class="cart-icon">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            <span class="cart-count">0</span>
           </li>
         </ul>
       </nav>
@@ -114,7 +116,15 @@
               <p>Đồ mặc nhà - 2MNLA25008H</p>
               <p>264.000 ₫</p>
             </div>
-            <button class="buy-now-btn">Mua ngay</button>
+            <button
+              class="btn-primary"
+              data-id="daily-1"
+              data-name="Đồ mặc nhà - 2MNLA25008H"
+              data-price="264000"
+              data-image="https://owen.cdn.vccloud.vn/media/catalog/product/cache/01755127bd64f5dde3182fd2f139143a/2/m/2mnla25008h-bk_3_.jpg"
+            >
+              Mua ngay
+            </button>
           </div>
           <div class="product-card">
             <img
@@ -125,7 +135,15 @@
               <p>Đồ mặc nhà -1MNCT25047N</p>
               <p>589.000 ₫</p>
             </div>
-            <button class="buy-now-btn">Mua ngay</button>
+            <button
+              class="btn-primary"
+              data-id="daily-2"
+              data-name="Đồ mặc nhà -1MNCT25047N"
+              data-price="589000"
+              data-image="https://owen.cdn.vccloud.vn/media/catalog/product/cache/01755127bd64f5dde3182fd2f139143a/1/m/1mnct25047n-or_4_.jpg"
+            >
+              Mua ngay
+            </button>
           </div>
           <div class="product-card">
             <img
@@ -136,7 +154,15 @@
               <p>Đồ mặc nhà - 1MNCT25042B</p>
               <p>519.000 ₫</p>
             </div>
-            <button class="buy-now-btn">Mua ngay</button>
+            <button
+              class="btn-primary"
+              data-id="daily-3"
+              data-name="Đồ mặc nhà - 1MNCT25042B"
+              data-price="519000"
+              data-image="https://owen.cdn.vccloud.vn/media/catalog/product/cache/01755127bd64f5dde3182fd2f139143a/1/m/1mnct25042b-pk.jpg"
+            >
+              Mua ngay
+            </button>
           </div>
           <div class="product-card">
             <img
@@ -147,7 +173,15 @@
               <p>Đồ mặc nhà - 1MNCT25049D</p>
               <p>680.000 ₫</p>
             </div>
-            <button class="buy-now-btn">Mua ngay</button>
+            <button
+              class="btn-primary"
+              data-id="daily-4"
+              data-name="Đồ mặc nhà - 1MNCT25049D"
+              data-price="680000"
+              data-image="https://owen.cdn.vccloud.vn/media/catalog/product/cache/01755127bd64f5dde3182fd2f139143a/1/m/1mnct25049d-bg_1_.jpg"
+            >
+              Mua ngay
+            </button>
           </div>
         </div>
       </section>
@@ -158,6 +192,25 @@
         />
       </section>
     </main>
+    <div id="checkout-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal-btn">&times;</span>
+        <p id="modal-message"></p>
+      </div>
+    </div>
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Giỏ hàng</h2>
+        <button class="close-cart-btn">&times;</button>
+      </div>
+      <div class="cart-body">
+        <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào đây -->
+      </div>
+      <div class="cart-footer">
+        <p>Tổng cộng: <span class="cart-total">0đ</span></p>
+        <button class="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
     <div id="footer-placeholder"></div>
     <!-- JavaScript -->
     <!-- jQuery is required for the script below to work -->
@@ -170,6 +223,9 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
