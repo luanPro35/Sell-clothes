@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./frontend/css/nav.css" />
     <link rel="stylesheet" href="./frontend/css/footer.css" />
     <link rel="stylesheet" href="./frontend/css/cart.css" />
+    <link rel="stylesheet" href="./frontend/css/login-sidebar.css" />
     <link rel="stylesheet" href="./frontend/css/logo-carousel.css" />
     <link
       rel="stylesheet"
@@ -36,7 +37,6 @@
     <title>T-Shirt Shop - Trang chủ</title>
   </head>
   <body>
-    <!-- Header section - full width -->
     <header>
       <nav class="navbar">
         <a href="index.html"
@@ -69,8 +69,8 @@
           </li>
         </ul>
         <ul class="icon-nav">
-          <li>
-            <a href=""><i class="fa-solid fa-user"></i></a>
+          <li class="user-icon">
+            <a href="#"><i class="fa-solid fa-user"></i></a>
           </li>
           <li class="cart-icon">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
@@ -140,7 +140,7 @@
                           data-id="product-1"
                           data-name="Áo thun nam cổ tròn"
                           data-price="575000"
-                          data-image="assets/section1_1.webp"
+                          data-image="./frontend/assets/section1_1.webp"
                         >
                           Add to cart
                         </button>
@@ -169,7 +169,7 @@
                           data-id="product-2"
                           data-name="Áo thun nam họa tiết"
                           data-price="437000"
-                          data-image="assets/section1_2.jpg"
+                          data-image="./frontend/assets/section1_2.jpg"
                         >
                           Add to cart
                         </button>
@@ -202,7 +202,7 @@
                           data-id="product-3"
                           data-name="Áo thun đẹp cao cấp"
                           data-price="375000"
-                          data-image="assets/section1_3.jpg"
+                          data-image="./frontend/assets/section1_3.jpg"
                         >
                           Add to cart
                         </button>
@@ -235,7 +235,7 @@
                           data-id="product-4"
                           data-name="Áo phông polo nam"
                           data-price="299000"
-                          data-image="assets/section1_4.jpg"
+                          data-image="./frontend/assets/section1_4.jpg"
                         >
                           Add to cart
                         </button>
@@ -424,51 +424,51 @@
           <div class="logo-carousel">
             <div class="logos-track">
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_cIdh8OBP.svg"
+                src="https://logo.sibic.vn//upload/image/20231104/6383468897495998741769627.jpg"
                 alt="Logo 1"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_9hARhPrn.svg"
+                src="https://logo.sibic.vn//upload/image/20231104/6383468907429516069153342.jpg"
                 alt="Logo 2"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_7JgJaT3x.svg"
+                src="https://aedigi.com/wp-content/uploads/2021/12/Versace-1.jpg"
                 alt="Logo 3"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_sZ44U0na.svg"
+                src="https://aedigi.com/wp-content/uploads/2021/12/Gucci-2.jpg"
                 alt="Logo 4"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_N10oKZOV.svg"
+                src="https://matkinhauviet.vn/wp-content/uploads/2023/10/logo-thuong-hieu-thoi-trang-nike.jpg"
                 alt="Logo 5"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_DnDeczOW.svg"
+                src="https://ttagencyads.com/wp-content/uploads/2021/04/10-mau-logo-thuong-hieu-2.png"
                 alt="Logo 6"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_cIdh8OBP.svg"
+                src="https://logo.sibic.vn//upload/image/20231104/6383468897495998741769627.jpg"
                 alt="Logo 1"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_9hARhPrn.svg"
+                src="https://logo.sibic.vn//upload/image/20231104/6383468907429516069153342.jpg"
                 alt="Logo 2"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_7JgJaT3x.svg"
+                src="https://aedigi.com/wp-content/uploads/2021/12/Versace-1.jpg"
                 alt="Logo 3"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_sZ44U0na.svg"
+                src="https://aedigi.com/wp-content/uploads/2021/12/Gucci-2.jpg"
                 alt="Logo 4"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_N10oKZOV.svg"
+                src="https://matkinhauviet.vn/wp-content/uploads/2023/10/logo-thuong-hieu-thoi-trang-nike.jpg"
                 alt="Logo 5"
               />
               <img
-                src="https://curious-sheep.10web.cloud/wp-content/uploads/2025/07/logo_DnDeczOW.svg"
+                src="https://ttagencyads.com/wp-content/uploads/2021/04/10-mau-logo-thuong-hieu-2.png"
                 alt="Logo 6"
               />
             </div>
@@ -509,6 +509,85 @@
         <button class="checkout-btn">Thanh toán</button>
       </div>
     </div>
+    <div class="login-sidebar hidden">
+      <div class="login-header">
+        <h2>Đăng nhập</h2>
+        <button class="close-login-btn">&times;</button>
+      </div>
+      <div class="login-body">
+        <div class="form-container" id="login-form-sidebar">
+          <form>
+            <input
+              type="email"
+              placeholder="Email"
+              class="input-email"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              class="input-password"
+              required
+            />
+            <button type="submit" onclick="login()">Đăng nhập</button>
+          </form>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register-sidebar">Đăng ký tại đây</a>
+          </p>
+        </div>
+        <div
+          class="form-container"
+          id="register-form-sidebar"
+          style="display: none"
+        >
+          <h2>Đăng ký</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Username"
+              class="input-password"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="input-email"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              class="input-address"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="input-phone"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              class="input-password"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password-Again"
+              class="input-password-again"
+              required
+            />
+            <button type="submit" onclick="register()">Đăng ký</button>
+          </form>
+          <p>
+            Đã có tài khoản?
+            <a href="#" id="show-login-sidebar">Đăng nhập tại đây</a>
+          </p>
+        </div>
+      </div>
+    </div>
     <div id="footer-placeholder"></div>
     <!-- JavaScript -->
     <!-- jQuery is required for the script below to work -->
@@ -527,5 +606,6 @@
     </script>
     <script src="./frontend/js/nav.js"></script>
     <script src="./frontend/js/index.js"></script>
+    <script src="./frontend/js/login.js"></script>
   </body>
 </html>

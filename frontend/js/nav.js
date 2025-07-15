@@ -96,6 +96,38 @@ document.addEventListener('DOMContentLoaded', function() {
   const cartIcon = document.querySelector('.fa-bag-shopping');
   const cartSidebar = document.querySelector('.cart-sidebar');
   const closeCartBtn = document.querySelector('.close-cart-btn');
+  const userIcon = document.querySelector('.user-icon');
+  const loginSidebar = document.querySelector('.login-sidebar');
+  const closeLoginBtn = document.querySelector('.close-login-btn');
+  const showRegisterSidebar = document.getElementById('show-register-sidebar');
+  const showLoginSidebar = document.getElementById('show-login-sidebar');
+  const loginFormSidebar = document.getElementById('login-form-sidebar');
+  const registerFormSidebar = document.getElementById('register-form-sidebar');
+
+  if (userIcon && loginSidebar && closeLoginBtn) {
+    userIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginSidebar.classList.add('open');
+    });
+
+    closeLoginBtn.addEventListener('click', () => {
+      loginSidebar.classList.remove('open');
+    });
+  }
+
+  if(showRegisterSidebar && showLoginSidebar && loginFormSidebar && registerFormSidebar) {
+    showRegisterSidebar.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginFormSidebar.style.display = 'none';
+        registerFormSidebar.style.display = 'block';
+    });
+
+    showLoginSidebar.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerFormSidebar.style.display = 'none';
+        loginFormSidebar.style.display = 'block';
+    });
+  }
 
   if (cartIcon && cartSidebar && closeCartBtn) {
     cartIcon.addEventListener('click', (e) => {

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/man's clothes.css" />
     <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/login-sidebar.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -36,7 +37,7 @@
           </li>
         </ul>
         <ul class="icon-nav">
-          <li>
+          <li class="user-icon">
             <a href=""><i class="fa-solid fa-user"></i></a>
           </li>
           <li class="cart-icon">
@@ -616,6 +617,85 @@
         <button class="checkout-btn">Thanh toán</button>
       </div>
     </div>
+    <div class="login-sidebar hidden">
+      <div class="login-header">
+        <h2>Đăng nhập</h2>
+        <button class="close-login-btn">&times;</button>
+      </div>
+      <div class="login-body">
+        <div class="form-container" id="login-form-sidebar">
+          <form>
+            <input
+              type="email"
+              placeholder="Email"
+              class="input-email"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              class="input-password"
+              required
+            />
+            <button type="submit" onclick="login()">Đăng nhập</button>
+          </form>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register-sidebar">Đăng ký tại đây</a>
+          </p>
+        </div>
+        <div
+          class="form-container"
+          id="register-form-sidebar"
+          style="display: none"
+        >
+          <h2>Đăng ký</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Username"
+              class="input-password"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="input-email"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              class="input-address"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="input-phone"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              class="input-password"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password-Again"
+              class="input-password-again"
+              required
+            />
+            <button type="submit" onclick="register()">Đăng ký</button>
+          </form>
+          <p>
+            Đã có tài khoản?
+            <a href="#" id="show-login-sidebar">Đăng nhập tại đây</a>
+          </p>
+        </div>
+      </div>
+    </div>
     <div id="footer-placeholder"></div>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -629,5 +709,7 @@
     <script src="../js/nav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="../js/man's clothes.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>
